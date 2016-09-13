@@ -15,8 +15,13 @@ const title = 'React Starter Kit';
 
 function Home({data}) {
   return (
-    <div>
-        {data}
+    <div className={s.container}>
+        <div className={s.leftContainer}>
+        
+        </div>
+        <div className={s.rightContainer}>
+        
+        </div>
     </div>
   );
 }

@@ -63,10 +63,9 @@ class App extends Component {
     const store = this.props.context.store;
     return (
       <Provider store={store}>
-        <div>
+        <div className={s.container}>
           <Header />
           {this.props.children}
-          <Feedback />
           <Footer />
         </div>
       </Provider>
