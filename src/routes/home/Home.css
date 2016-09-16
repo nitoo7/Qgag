@@ -18,3 +18,8 @@
     background-color: antiquewhite;
     height: 100%;
 }
+
+.imgPreview img{
+    width: 250px;
+    height: 250px;
+}
