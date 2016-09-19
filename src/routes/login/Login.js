@@ -15,6 +15,16 @@ const title = 'Log In';
 
 function Login(props, context) {
   context.setTitle(title);
+
+//function onSignIn(googleUser) {
+  //var profile = googleUser.getBasicProfile();
+ // console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  //console.log('Name: ' + profile.getName());
+  //console.log('Image URL: ' + profile.getImageUrl());
+  //console.log('Email: ' + profile.getEmail());
+//}
+
+  
   return (
     <div className={s.root}>
       <div className={s.container}>
@@ -36,6 +46,7 @@ function Login(props, context) {
             <span>Log in with Facebook</span>
           </a>
         </div>
+        <div className="g-signin2" data-onsuccess="onSignIn">aasdaasdas  </div>
         <div className={s.formGroup}>
           <a className={s.google} href="/login/google">
             <svg

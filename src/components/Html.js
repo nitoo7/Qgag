@@ -7,6 +7,7 @@ function Html({ title, description, style, script, children, state }) {
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+        <meta name="google-signin-client_id" content="671492848264-tfggjg41bfv5h2krm1128co11t1k7eg4.apps.googleusercontent.com" />
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -32,6 +33,8 @@ function Html({ title, description, style, script, children, state }) {
         {analytics.google.trackingId &&
           <script src="https://www.google-analytics.com/analytics.js" async defer />
         }
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+
       </body>
     </html>
   );
