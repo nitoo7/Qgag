@@ -65,7 +65,7 @@ class Home extends Component {
 
 <input className="fileInput" type="file" onChange={(e)=>this._handleImageChange(e)} />
           <button className="submitButton" type="submit" onClick={(e)=>this._handleSubmit(e)}>Upload Image</button>
-        <div className="imgPreview">
+        <div className={s.imgPreview}>
           {$imagePreview}
         </div>
 
