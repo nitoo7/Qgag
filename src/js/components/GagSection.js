@@ -4,6 +4,7 @@ import { connect } from "react-redux"
 import { fetchUser } from "../actions/userActions"
 import { fetchTweets } from "../actions/tweetsActions"
 require('../style/GagSection.scss')
+import response from "../../../mockResponse/response.js"
 
 @connect((store) => {
   return {
@@ -33,16 +34,16 @@ export default class Home extends React.Component {
     return (
       <div className="gagSection">
         <div className="gagContainer">
-          <h3 className="gagTitle">gag...1</h3>
-           <div className="gagImageContainer">
-             <img className="gagImage" src="http://www.planwallpaper.com/static/images/latest.jpg" alt="Smiley face"></img>
-           </div>
-        </div>
-        <div className="gagContainer">
-          <h3 className="gagTitle">gag...2</h3>
-          <div className="gagImageContainer">
-            <img className="gagImage" src="http://www.planwallpaper.com/static/images/latest.jpg" alt="Smiley face"></img>
+        {
+          response.gags.map(item => 
+          <div>
+            <h3 className="gagTitle">{item.title}</h3>
+            <div className="gagImageContainer">
+              <img className="gagImage" src={item.image} alt="Smiley face"></img>
+            </div>          
           </div>
+          )
+        }
         </div>
       </div>
     );
