@@ -18,8 +18,8 @@ require('../style/Home.scss')
 })
 
 export default class Home extends React.Component {
+  
   componentWillMount() {
-    console.log('HHHHHHHHHHHHH')
     this.props.dispatch(fetchGags())
   }
 

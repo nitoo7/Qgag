@@ -29,6 +29,13 @@ export default function reducer(state={
           gagInfo: action.payload
         }
       }
+      case "SHOW_GAG_SECTION": {
+        return {
+          ...state,
+          displayGagPage: false,
+          gagInfo: null
+        }
+      }      
     }
 
     return state

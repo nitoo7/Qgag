@@ -23,7 +23,6 @@ export default class Home extends React.Component {
   }
 
   showGag(item) {
-    console.log('teriggered........',item)
     this.props.dispatch(showGagPage(item))
   }
 

@@ -14,8 +14,14 @@ export function fetchGags() {
 
 export function showGagPage(data) {
   return function(dispatch) {
-    console.log('action....', data)
     dispatch({type: "SHOW_GAG", payload: data})
+  }
+}
+
+export function showGagSection() {
+  return function(dispatch) {
+    console.log('action....', )
+    dispatch({type: "SHOW_GAG_SECTION", payload: null})
   }
 }
 
