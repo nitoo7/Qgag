@@ -28,7 +28,7 @@ export default class Home extends React.Component {
 
     return (
       <div className="header">
-        <h2 onClick={(evt) => this.showGagSection() }>HOME</h2>
+        <div className="homeTitle" onClick={(evt) => this.showGagSection() }>:P...</div>
       </div>
     );
   }
