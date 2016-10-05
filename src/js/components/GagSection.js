@@ -35,7 +35,7 @@ export default class Home extends React.Component {
       <div className="gagSection">
         <div className="gagContainer">
         {
-          response.gags.map(item => 
+          this.props.gags.map(item => 
           <div>
             <h3 className="gagTitle">{item.title}</h3>
             <div className="gagImageContainer">
