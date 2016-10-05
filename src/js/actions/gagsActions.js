@@ -4,7 +4,6 @@ export function fetchGags() {
   return function(dispatch) {
     axios.get("https://qgagservices.herokuapp.com/details")
       .then((response) => {
-        console.log('*******->', response);
         dispatch({type: "FETCH_GAGS_FULFILLED", payload: response.data})
       })
       .catch((err) => {
@@ -13,26 +12,10 @@ export function fetchGags() {
   }
 }
 
-export function addTweet(id, text) {
-  return {
-    type: 'ADD_TWEET',
-    payload: {
-      id,
-      text,
-    },
+export function showGagPage(data) {
+  return function(dispatch) {
+    console.log('action....', data)
+    dispatch({type: "SHOW_GAG", payload: data})
   }
 }
 
-export function updateTweet(id, text) {
-  return {
-    type: 'UPDATE_TWEET',
-    payload: {
-      id,
-      text,
-    },
-  }
-}
-
-export function deleteTweet(id) {
-  return { type: 'DELETE_TWEET', payload: id}
-}

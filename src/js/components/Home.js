@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 import { fetchGags } from "../actions/gagsActions"
 import Header from "../components/Header.js"
 import GagSection from "../components/GagSection.js"
-import UserProfileSection from "../components/UserProfileSection.js"
+import GagPage from "../components/GagPage.js"
 require('../style/Home.scss')
 
 @connect((store) => {
@@ -12,29 +12,30 @@ require('../style/Home.scss')
     user: store.user.user,
     userFetched: store.user.fetched,
     gags: store.gags.gags,
+    displayGagPage: store.gags.displayGagPage,
+    gagInfo: store.gags.gagInfo
   };
 })
+
 export default class Home extends React.Component {
   componentWillMount() {
+    console.log('HHHHHHHHHHHHH')
     this.props.dispatch(fetchGags())
   }
 
-  fetchTweets() { 
-  }
-
   render() {
-    const { user, gags } = this.props;
+    const { user, gags , displayGagPage, gagInfo} = this.props;
 
-    // if (!tweets.length) {
-    //   return <button onClick={this.fetchTweets.bind(this)}>load tweets</button>
-    // }
-    console.log('#####->', gags)
+    console.log('#####->', displayGagPage)
 
     return (
      <div className="container">
        <Header />
-       <GagSection gags={gags} />
-       <UserProfileSection />
+       {displayGagPage ?
+          <GagPage gagInfo={gagInfo}/>
+         :
+         <GagSection gags={gags} />
+        }
       </div>
     );
   }

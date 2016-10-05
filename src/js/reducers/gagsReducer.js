@@ -3,6 +3,8 @@ export default function reducer(state={
     fetching: false,
     fetched: false,
     error: null,
+    displayGagPage: false,
+    gagInfo: null
   }, action) {
 
     switch (action.type) {
@@ -20,27 +22,11 @@ export default function reducer(state={
           gags: action.payload,
         }
       }
-      case "ADD_GAG": {
+      case "SHOW_GAG": {
         return {
           ...state,
-          gags: [...state.tweets, action.payload],
-        }
-      }
-      case "UPDATE_GAG": {
-        const { id, text } = action.payload
-        const newTweets = [...state.tweets]
-        const tweetToUpdate = newTweets.findIndex(tweet => tweet.id === id)
-        newTweets[tweetToUpdate] = action.payload;
-
-        return {
-          ...state,
-          gags: newTweets,
-        }
-      }
-      case "DELETE_GAGs": {
-        return {
-          ...state,
-          gags: state.tweets.filter(tweet => tweet.id !== action.payload),
+          displayGagPage: true,
+          gagInfo: action.payload
         }
       }
     }
