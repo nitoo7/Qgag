@@ -2,7 +2,7 @@ import axios from "axios";
 
 export function fetchTweets() {
   return function(dispatch) {
-    axios.get("http://10.4.0.48:3000/details")
+    axios.get("https://qgagservices.herokuapp.com/details")
       .then((response) => {
         dispatch({type: "FETCH_TWEETS_FULFILLED", payload: response.data})
       })
