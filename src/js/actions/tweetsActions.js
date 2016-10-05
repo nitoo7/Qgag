@@ -2,7 +2,7 @@ import axios from "axios";
 
 export function fetchTweets() {
   return function(dispatch) {
-    axios.get("http://rest.learncode.academy/api/test123/tweets")
+    axios.get("https://qgagservices.herokuapp.com/details")
       .then((response) => {
         dispatch({type: "FETCH_TWEETS_FULFILLED", payload: response.data})
       })

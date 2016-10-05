@@ -30,13 +30,13 @@ export default class Home extends React.Component {
     // if (!tweets.length) {
     //   return <button onClick={this.fetchTweets.bind(this)}>load tweets</button>
     // }
-
+    console.log('#####->', tweets)
     const mappedTweets = tweets.map(tweet => <li>{tweet.text}</li>)
 
     return (
      <div className="container">
        <Header />
-       <GagSection />
+       <GagSection gags={tweets} />
        <UserProfileSection />
       </div>
     );
