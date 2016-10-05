@@ -1,13 +1,14 @@
 import axios from "axios";
 
-export function fetchTweets() {
+export function fetchGags() {
   return function(dispatch) {
     axios.get("https://qgagservices.herokuapp.com/details")
       .then((response) => {
-        dispatch({type: "FETCH_TWEETS_FULFILLED", payload: response.data})
+        console.log('*******->', response);
+        dispatch({type: "FETCH_GAGS_FULFILLED", payload: response.data})
       })
       .catch((err) => {
-        dispatch({type: "FETCH_TWEETS_REJECTED", payload: err})
+        dispatch({type: "FETCH_GAGS_REJECTED", payload: err})
       })
   }
 }

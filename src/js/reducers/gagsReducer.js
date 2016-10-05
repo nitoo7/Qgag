@@ -1,32 +1,32 @@
 export default function reducer(state={
-    tweets: [],
+    gags: [],
     fetching: false,
     fetched: false,
     error: null,
   }, action) {
 
     switch (action.type) {
-      case "FETCH_TWEETS": {
+      case "FETCH_GAGS": {
         return {...state, fetching: true}
       }
-      case "FETCH_TWEETS_REJECTED": {
+      case "FETCH_GAGS_REJECTED": {
         return {...state, fetching: false, error: action.payload}
       }
-      case "FETCH_TWEETS_FULFILLED": {
+      case "FETCH_GAGS_FULFILLED": {
         return {
           ...state,
           fetching: false,
           fetched: true,
-          tweets: action.payload,
+          gags: action.payload,
         }
       }
-      case "ADD_TWEET": {
+      case "ADD_GAG": {
         return {
           ...state,
-          tweets: [...state.tweets, action.payload],
+          gags: [...state.tweets, action.payload],
         }
       }
-      case "UPDATE_TWEET": {
+      case "UPDATE_GAG": {
         const { id, text } = action.payload
         const newTweets = [...state.tweets]
         const tweetToUpdate = newTweets.findIndex(tweet => tweet.id === id)
@@ -34,13 +34,13 @@ export default function reducer(state={
 
         return {
           ...state,
-          tweets: newTweets,
+          gags: newTweets,
         }
       }
-      case "DELETE_TWEET": {
+      case "DELETE_GAGs": {
         return {
           ...state,
-          tweets: state.tweets.filter(tweet => tweet.id !== action.payload),
+          gags: state.tweets.filter(tweet => tweet.id !== action.payload),
         }
       }
     }
