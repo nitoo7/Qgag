@@ -7,7 +7,7 @@ import CommentBox from "../components/CommentBox.js"
 require('../style/CommentBox.scss')
 
 import io from 'socket.io-client'
-var socket = io.connect('10.4.0.48:3000/', {reconnect: true});
+var socket = io.connect('https://qgagsocketservices.herokuapp.com/', {reconnect: true});
 
 
 @connect((store) => {
