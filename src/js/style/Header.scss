@@ -3,4 +3,31 @@
   width: 100%;
   position: fixed;
   background-color: #4f5a6e;
+
+  .homeTitle {
+    float: left;
+  }
+
+  .newPost{
+    margin-top: 5px;
+    margin-left: 12px;
+    background-color: #424b5f;
+    border-radius: 1px;
+    text-decoration: none;
+    text-align: left;
+    color: #fff;
+    border: none;
+  }
+
+  .signIn {
+    float: right;
+    margin-right: 16px;
+    margin-top: 5px;
+    background-color: #424b5f;
+    border-radius: 1px;
+    text-decoration: none;
+    text-align: left;
+    color: #fff;
+    border: none;
+  }
 }

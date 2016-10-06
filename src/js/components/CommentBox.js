@@ -7,7 +7,7 @@ import CommentBox from "../components/CommentBox.js"
 require('../style/CommentBox.scss')
 
 import io from 'socket.io-client'
-var socket = io.connect('https://qgagsocketservices.herokuapp.com/', {reconnect: true});
+var socket = io.connect('10.4.0.48:3000/', {reconnect: true});
 
 
 @connect((store) => {
@@ -26,7 +26,7 @@ export default class Home extends React.Component {
     super(props);
     this.state = {
       comments: [],
-      textContent: null
+      textzContent: null
     }
     this.fetchChat = this.fetchChat.bind(this);
     this.textConetentChange = this.textConetentChange.bind(this);
@@ -42,17 +42,21 @@ export default class Home extends React.Component {
     var self = this;
     var items = this.state.comments;
     socket.on('CH01', function(msg){
-    items.push(msg.msg)
+      console.log('%%%%%%%%%%%%->', this.props.gagInfo)
+      if(msg.msg.post === "01") {
+           items.push(msg.msg.text)
       self.setState({
         comments: items
-      })
+      }) 
+      }
+
     });
   }
 
   fetchChat() {
     console.log('chat enabled.....', this.state.textContent)
 
-    socket.emit('CH01', 'nithin', this.state.textContent);
+    socket.emit('CH01', 'nithin', {text: this.state.textContent, post: "01"});
     this.setState({
       textContent: null
     })
