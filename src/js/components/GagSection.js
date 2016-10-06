@@ -7,7 +7,6 @@ require('../style/GagSection.scss')
 import response from "../../../mockResponse/response.js"
 
 @connect((store) => {
-  console.log('%%%%%%->', store)
   return {
     user: store.user.user,
     userFetched: store.user.fetched,

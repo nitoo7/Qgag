@@ -5,7 +5,6 @@ import { showGagSection } from "../actions/gagsActions"
 require('../style/Header.scss')
 
 @connect((store) => {
-  console.log('%%%%%%->', store)
   return {
     user: store.user.user,
     userFetched: store.user.fetched,

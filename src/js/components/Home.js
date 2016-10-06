@@ -7,7 +7,6 @@ import GagPage from "../components/GagPage.js"
 require('../style/Home.scss')
 
 @connect((store) => {
-  console.log('%%%%%%->', store)
   return {
     user: store.user.user,
     userFetched: store.user.fetched,
@@ -18,15 +17,18 @@ require('../style/Home.scss')
 })
 
 export default class Home extends React.Component {
-  
+
+  constructor(props) {
+    super(props);
+
+  }
+
   componentWillMount() {
     this.props.dispatch(fetchGags())
   }
 
   render() {
     const { user, gags , displayGagPage, gagInfo} = this.props;
-
-    console.log('#####->', displayGagPage)
 
     return (
      <div className="container">
