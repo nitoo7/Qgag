@@ -1,8 +1,48 @@
   .GagPage {
-    border: 1px solid black;
     width: 100%;
     padding: 0;
     margin: 0;
     float: right;
-    margin-top: 36px;
+    margin-top: 50px;
+
+    .gagContainer {
+      width: 100%;
+
+      .gagTitleContainer {
+        width: 750px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding-bottom: 20px;
+        box-shadow: 0 2px 0 #e6e7eb;
+        margin-bottom: 20px;
+        padding-top: 20px;    
+
+        .gagTitle {
+          font-size: 20px;
+          color: rgb(0, 0, 0);
+          font-weight: bold;
+          padding-left: 25px;
+          margin: 0;
+        }  
+      }
+
+      .gagItem {
+        width: 750px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding-bottom: 20px;
+        box-shadow: 0 2px 0 #e6e7eb;
+        padding-top: 20px;
+
+        .gagImageContainer {
+          width: 700px;
+          margin: 0 auto;
+
+          .gagImage {
+            width: 100%;
+            height: 100%
+          }
+        }
+      }
+    }
   }

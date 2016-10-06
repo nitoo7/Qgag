@@ -33,7 +33,7 @@ export default class Home extends React.Component {
         <div className="gagContainer">
         {
           this.props.gags.map(item => 
-          <div>
+          <div className="gagItem">
             <h3 onClick={(evt) => this.showGag(item) } className="gagTitle">{item.title}</h3>
             <div className="gagImageContainer">
               <img className="gagImage" src={item.image} alt="Smiley face"></img>

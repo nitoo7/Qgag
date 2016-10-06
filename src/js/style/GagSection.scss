@@ -5,17 +5,31 @@
   margin-top: 36px;
 
   .gagContainer {
-    width: 700px;
-    margin-left: 125px;
+    width: 100%;
 
-    .gagTitle {
+    .gagItem {
+      width: 750px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding-bottom: 20px;
+      box-shadow: 0 2px 0 #e6e7eb;
 
-    }
-    .gagImageContainer {
+      .gagTitle {
+        font-size: 20px;
+        color: #000;
+        font-weight: bold;
+        padding-left: 25px;
+        padding-top: 7px;
+      }
 
-      .gagImage {
-        width: 100%;
-        height: 100%
+      .gagImageContainer {
+        width: 700px;
+        margin: 0 auto;
+
+        .gagImage {
+          width: 100%;
+          height: 100%
+        }
       }
     }
   }
