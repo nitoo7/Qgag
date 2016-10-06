@@ -42,7 +42,6 @@ export default class Home extends React.Component {
     var self = this;
     var items = this.state.comments;
     socket.on('CH01', function(msg){
-      console.log('%%%%%%%%%%%%->', this.props.gagInfo)
       if(msg.msg.post === "01") {
            items.push(msg.msg.text)
       self.setState({
