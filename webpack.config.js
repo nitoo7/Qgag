@@ -5,8 +5,8 @@ var path = require('path');
 module.exports = {
   devServer: {
   // ...
-  host: '10.4.0.48',
-  port: 4000,
+  host: '0.0.0.0',
+  port: process.env.PORT || 4000,
   // ...
 },
   context: path.join(__dirname, "src"),
