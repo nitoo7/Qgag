@@ -2,6 +2,7 @@ export default function reducer(state={
     gags: [],
     fetching: false,
     fetched: false,
+    fetchPost: false,
     error: null,
     displayGagPage: false,
     gagInfo: null
@@ -20,6 +21,18 @@ export default function reducer(state={
           fetching: false,
           fetched: true,
           gags: action.payload,
+        }
+      }
+      case "FETCH_POST_REJECTED": {
+         return {...state, fetchPost: false, error: action.payload}
+      }
+      case "FETCH_POST_FULFILLED": {
+        return {
+          ...state,
+          fetching: false,
+          fetched: true,
+          fetchPost: true,
+          gagInfo: action.payload,
         }
       }
       case "SHOW_GAG": {

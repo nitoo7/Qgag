@@ -1,6 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
 import { showGagSection } from "../actions/gagsActions"
+var Link = require('react-router').Link
 
 require('../style/Header.scss')
 
@@ -27,7 +28,7 @@ export default class Home extends React.Component {
 
     return (
       <div className="header">
-        <div className="homeTitle" onClick={(evt) => this.showGagSection() }>QGAG</div>
+        <Link className="homeTitle" to={`/section`}>QGAG</Link>
         <button className="newPost">New Post</button>
         <button className="signIn">Sign in</button>
       </div>

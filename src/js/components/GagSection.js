@@ -2,6 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import { showGagPage } from "../actions/gagsActions"
 import { fetchGags } from "../actions/gagsActions"
+var Link = require('react-router').Link
 
 require('../style/GagSection.scss')
 import response from "../../../mockResponse/response.js"
@@ -11,6 +12,8 @@ import response from "../../../mockResponse/response.js"
     user: store.user.user,
     userFetched: store.user.fetched,
     gags: store.gags.gags,
+    displayGagPage: store.gags.displayGagPage,
+    gagInfo: store.gags.gagInfo
   };
 })
 
@@ -33,7 +36,7 @@ export default class Home extends React.Component {
         {
           this.props.gags.map(item => 
           <div className="gagItem">
-            <h3 onClick={(evt) => this.showGag(item) } className="gagTitle">{item.title}</h3>
+          <Link className="gagTitle" to={`/post/` + item._id}>{item.title}</Link>
             <div className="gagImageContainer">
               <img className="gagImage" src={item.image} alt="Smiley face"></img>
             </div>          

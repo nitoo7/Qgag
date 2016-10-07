@@ -25,8 +25,6 @@ export default class Home extends React.Component {
   render() {
     const { user, gags , displayGagPage, gagInfo} = this.props;
 
-    console.log('#####->', displayGagPage)
-
     return (
      <div className="commentSection">
        <h3>Comments</h3>

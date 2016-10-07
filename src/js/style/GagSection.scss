@@ -6,6 +6,7 @@
 
   .gagContainer {
     width: 100%;
+    margin-top: 35px;
 
     .gagItem {
       width: 750px;
@@ -13,6 +14,8 @@
       background-color: #fff;
       padding-bottom: 20px;
       box-shadow: 0 2px 0 #e6e7eb;
+      border-radius: 5px;
+      margin-bottom: 25px;
 
       .gagTitle {
         font-size: 20px;
@@ -25,6 +28,7 @@
       .gagImageContainer {
         width: 700px;
         margin: 0 auto;
+        height: 700px;
 
         .gagImage {
           width: 100%;

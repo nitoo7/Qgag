@@ -12,7 +12,8 @@ require('../style/Home.scss')
     userFetched: store.user.fetched,
     gags: store.gags.gags,
     displayGagPage: store.gags.displayGagPage,
-    gagInfo: store.gags.gagInfo
+    gagInfo: store.gags.gagInfo,
+    fetchPost: store.gags.fetchPost
   };
 })
 
@@ -20,7 +21,6 @@ export default class Home extends React.Component {
 
   constructor(props) {
     super(props);
-
   }
 
   componentWillMount() {
@@ -31,13 +31,9 @@ export default class Home extends React.Component {
     const { user, gags , displayGagPage, gagInfo} = this.props;
 
     return (
-     <div className="container">
-       <Header />
-       {displayGagPage ?
-          <GagPage gagInfo={gagInfo}/>
-         :
-         <GagSection gags={gags} />
-        }
+      <div className="container">
+        <Header />
+        {this.props.children}
       </div>
     );
   }

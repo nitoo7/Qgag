@@ -53,8 +53,6 @@ export default class Home extends React.Component {
   }
 
   fetchChat() {
-    console.log('chat enabled.....', this.state.textContent)
-
     socket.emit('CH01', 'nithin', {text: this.state.textContent, post: "01"});
     this.setState({
       textContent: null
@@ -68,7 +66,6 @@ export default class Home extends React.Component {
   }
 
   render() {
-    console.log('RErendered..................', this.state.comments)
     const { user, gags , displayGagPage, gagInfo} = this.props;
 
     return (
