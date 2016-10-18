@@ -22,12 +22,39 @@
   .signIn {
     float: right;
     margin-right: 16px;
-    margin-top: 5px;
+    margin-top: 1px;
     background-color: #424b5f;
     border-radius: 1px;
     text-decoration: none;
     text-align: left;
     color: #fff;
     border: none;
+    background: url(http://i.stack.imgur.com/XzoRm.png) no-repeat;
+    width: 146px;
+    height: 34px;
+    background-size: cover;
+  }
+
+  .userInfo {
+    width: 166px;
+    height: 100%;
+    background-color: #424b5f;
+    float: right;
+
+    img {
+      border-radius: 50%;
+      margin-top: 2px;
+    }
+
+    strong {
+      margin-left: 10px;
+      margin-right: 10px;
+      font-weight: normal;
+      color: #fff
+    }
+  }
+
+  .hide {
+    display: none;
   }
 }
