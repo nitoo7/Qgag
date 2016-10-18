@@ -2,7 +2,7 @@ import axios from "axios";
 
 export function fetchGags() {
   return function(dispatch) {
-    axios.get("http://localhost:3000/details")
+    axios.get("https://qgagservices.herokuapp.com/details")
       .then((response) => {
         dispatch({type: "FETCH_GAGS_FULFILLED", payload: response.data})
       })
@@ -14,7 +14,7 @@ export function fetchGags() {
 
 export function fetchPost(postId) {
   return function(dispatch) {
-    axios.get("http://localhost:3000/details?id=" + postId)
+    axios.get("https://qgagservices.herokuapp.com/details?id=" + postId)
       .then((response) => {
         dispatch({type: "FETCH_POST_FULFILLED", payload: response.data})
       })
